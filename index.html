@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Audio Experiment</title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<h1>Audio Experiment</h1>
+
+<h2>Step 1 - Select audio file(s)</h2>
+<div id="selectFilesBox">Drag and drop file(s) here.</div>
+<p>
+    <input id="selectFilesInput" multiple name="selectFilesInput" type="file">
+    Selected
+    <span id="selectFilesTotalCount">0</span>
+    files.
+    Total file size
+    <span id="selectFilesTotalSize">0</span>.
+    <button id="selectFilesClearButton">Clear files</button>
+</p>
+
+<h2>Step 2 - Play the file</h2>
+<div>
+    <button id="audioPlayPauseButton" data-playing="false" role="switch" aria-checked="false">
+        <span id="audioPlayPauseButtonText">Play</span>
+    </button>
+    <button id="audioResetButton">Reset</button>
+</div>
+<br>
+<div>
+    <audio id="audioElement" controls>
+    </audio>
+</div>
+<br>
+<div>
+    <canvas id="audioCanvas" width="600" height="300"></canvas>
+</div>
+<br>
+<div>
+    <canvas id="audioCanvasFrequency" width="600" height="300"></canvas>
+</div>
+<br>
+<div>
+    <canvas id="audioCanvasSpectrogram" width="600" height="300"></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"
+        integrity="sha256-gX8uuyxN8stSMHWO9arnnKyenTOALaVAcVB3b6P87e4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"
+        integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
+<script src="behaviour.js"></script>
+</body>
+</html>
