@@ -18,39 +18,43 @@
     <span id="selectFilesTotalCount">0</span>
     files.
     Total file size
-    <span id="selectFilesTotalSize">0</span>.
-    <button id="selectFilesClearButton">Clear files</button>
+    <span id="selectFilesTotalSize">0 bytes</span>.
+
+</p>
+<p>
+    <button id="audioOfflineButton">Show visualisation</button>
+</p>
+<p>
+    <button id="audioResetButton">Clear files</button>
 </p>
 
 <h2>Step 2 - Play the file</h2>
 <div>
-    <button id="audioPlayPauseButton" data-playing="false" role="switch" aria-checked="false">
-        <span id="audioPlayPauseButtonText">Play</span>
-    </button>
-    <button id="audioResetButton">Reset</button>
+    <audio controls id="audioElement"></audio>
 </div>
 <br>
 <div>
-    <audio id="audioElement" controls>
-    </audio>
+    <canvas height="300" id="audioCanvasWaveformRealtime" width="600"></canvas>
 </div>
 <br>
 <div>
-    <canvas id="audioCanvas" width="600" height="300"></canvas>
+    <canvas height="300" id="audioCanvasFrequencyRealtime" width="600"></canvas>
 </div>
 <br>
 <div>
-    <canvas id="audioCanvasFrequency" width="600" height="300"></canvas>
+    <canvas height="300" id="audioCanvasSpectrogramRealtime" width="600"></canvas>
 </div>
 <br>
 <div>
-    <canvas id="audioCanvasSpectrogram" width="600" height="300"></canvas>
+    <canvas height="300" id="audioCanvasSpectrogramOffline" width="600"></canvas>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"
-        integrity="sha256-gX8uuyxN8stSMHWO9arnnKyenTOALaVAcVB3b6P87e4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"
-        integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA=" crossorigin="anonymous"></script>
-<script src="behaviour.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-gX8uuyxN8stSMHWO9arnnKyenTOALaVAcVB3b6P87e4="
+        src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-HJ7j+71YYw6Kcs8THwQV9lXmPOcR0eXlg7n8KRTZsyA="
+        src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+<script src="behaviour.js" type="module"></script>
 </body>
 </html>
